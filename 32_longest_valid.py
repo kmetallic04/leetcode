@@ -20,4 +20,10 @@ def longest_valid(string):
       
   return max_count
   
-print(longest_valid('())((())'))
+class Tests(unittest.TestCase):
+  def test_longest_valid(self):
+    self.assertEqual(longest_valid('(()'), 2)
+    self.assertEqual(longest_valid(')()())'), 4)
+    
+if __name__ == '__main__':
+  unittest.main()

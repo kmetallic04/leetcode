@@ -26,4 +26,9 @@ def jump_game(arr, index = 0, memo={}):
       
     return memo[index]
     
-print(jump_game([2,3,1,1,4]))
+class Tests(unittest.TestCase):
+  def test_jump_game(self):
+    self.assertEqual(jump_game([2,3,1,1,4]), 2)
+
+if __name__ == '__main__':
+  unittest.main()

@@ -40,4 +40,10 @@ def median_sorted(nums1, nums2):
     
   return (median + min(nums1[i], nums2[j])) / 2.0
     
-print(median_sorted([1,9],[1,2,3,4,5,6,7,8,9]))
+class Tests(unittest.TestCase):
+  def test_median_sorted(self):
+    self.assertEqual(median_sorted([1,3], [2]), 2.0)
+    self.assertEqual(median_sorted([1,2], [3,4]), 2.5)
+    
+if __name__ == '__main__':
+  unittest.main()

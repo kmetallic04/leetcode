@@ -29,9 +29,20 @@ def spiral_matrix(matrix):
   spiral_matrix_helper(matrix, 0, len(matrix[0]) - 1, 0, len(matrix) - 1, list)
   return list
 
-matrix = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9,10,11,12]
-]  
-print(spiral_matrix(matrix))
+class Tests(unittest.TestCase):
+  def test_spiral_matrix(self):
+    matrix = [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+      [9,10,11,12]
+    ] 
+    self.assertEqual(spiral_matrix(matrix), [1,2,3,4,8,12,11,10,9,5,6,7])
+    matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ]
+    self.assertEqual(spiral_matrix(matrix), [1,2,3,6,9,8,7,4,5])
+
+if __name__ == '__main__':
+  unittest.main()
